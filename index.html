@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <title>Rifo3D</title>
+        <style type="text/css">
+            <!--
+                .Stile3 {font-size: smaller}
+                .Stile5 {font-size: 45px}
+                -->
+        </style>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery-noconflict.js" type="text/javascript"></script>
+        <script src="js/jquery-migrate.min.js" type="text/javascript"></script> 
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+        <style>
+            /*body { margin:0; padding:0; }*/
+            .mapboxgl-canvas { position:relative !important; top:0; bottom:0; width:100%; }
+            .mapboxgl-popup {
+            /*max-width: 400px;*/
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
+        </style>
+        <!-- <script type="text/javascript" src="js/prototype.js"> </script>  -->
+        <!-- <script type="text/javascript" src="js/window.js"> </script> -->
+        <!-- <link href="css/main.css" rel="stylesheet" type="text/css"/> <!-- Add this to have a specific theme-->  
+        <!-- <link href="css/mac_os_x.css" rel="stylesheet" type="text/css"/>  -->
+    </head>
+    <body>
+        <div class="container">
+    		<div class="page-header clearfix">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <center>
+                    <a href="http://www.unibg.it/diathesis" target="_blank"><img src="images/logo_cst_diathesis.jpg" width="130" height="70" border="0" ></a>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <a href="http://www.rifoit.org/ex_gres/cybermap_areaexgres/cybermap_areaexgres.html" target="_blank"><img src="images/titolo.png"  border="0" > </a>
+                </center>
+            </div>
+            <div class="col-md-1" style="margin-top:1%;">
+                <center>
+                    <a href="http://www.rifoit.org" target="_blank"><img src="images/homerifo_home.png" border="0"  ></a>
+                </center>
+            </div>
+            <div class="col-md-1">
+                <center>
+                    <a href="http://www.rifoit.org/rifo3d/index_pro.html" target="_blank"><img src="images/bannerrifo.png" border="0" style="margin-top:1%;"></a>
+                </center>
+            </div>
+            <div class="col-md-1">
+                <center>
+                    <a href="http://www.mcarchitects.it/" target="_blank"><img src="images/mca_logo.jpg" border="0" style="" ></a>
+                </center>
+            </div>
+            <div class="col-md-1"></div>
+            </div>
+
+			</div>
+
+        </divv>
+        
+
+        <div class="col-md-3 left">
+        <input type="button" value="Reset Map!" onclick="window.location.href=window.location.href">
+        <br><br>
+
+        <div id="layersonoff">
+        <div class="uk-grid legct" >
+            <div class="uk-width-1-4 Stile3">
+                <span class="legenda-title"> <STRONG>GRADO DI OPERATIVITA'</STRONG></span>
+                <div class="earthtoggles">
+                    <div>
+                        <img src="images/legenda/aree_obsolete.png" style="width: 100px"  /> <img src="images/legenda/aree_dismesse.png" style="width: 100px"  />
+                    </div>
+                    <STRONG>BERGAMO</STRONG>
+                    <div>
+                        <input type="checkbox" id="kml-bergamo_obsoleto-check" onclick="toggleGeojson('bergamo_obsoleto')">
+                        <span class="legenda"><a href="javascript:;" onClick="window.open('images/image_obsoleto/bergamo_obsoleto.html', 'Bergamo Obsoleto', 'width=450, height=450, resizable, status, scrollbars=1, location');"> Obsoleto</a></span>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="kml-bergamo_dismesso-check" onclick="toggleGeojson('bergamo_dismesso')">
+                        <span class="legenda"><a href="javascript:;" onClick="window.open('images/image_dismesso/bergamo_dismesso.html', 'Bergamo Dismesso', 'width=450, height=450, resizable, status, scrollbars=1, location');"> Dismesso</a></span>
+                    </div>
+                    <STRONG>Area Ex Gres</STRONG>
+                    <div>
+                        <input type="checkbox" id="kml-bergamo_area_exgres_eddismessi-check" onclick="toggleGeojson('bergamo_area_exgres_eddismessi')" >
+                        <span class="legenda">Edifici Dismessi</span>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="kml-brescia_dismesso-check" onclick="toggleGeojson('brescia_dismesso')">
+                        <span class="legenda">Edifici in progetto (Concept Generale)</span>
+                    </div>
+                    </br>
+
+
+                    <div>
+                        </br>
+                        <span class="legenda"> <a href="javascript:;" onClick="window.open('projects/1_0_lavisionperilconceptgenerale.html', 'VISION DELLA RIGENERAZIONE URBANA', 'width=950, height=750, resizable, status, scrollbars=1, location');"><STRONG>  <i>VISION </i> DELLA RIGENERAZIONE URBANA </STRONG></a></span>
+                        </br> </br>
+                        <span class="legenda"><STRONG>ANALISI TERRITORIALE</STRONG></a></span>
+                        </br>
+                        </br>
+                        <span class="legenda"><STRONG>1.  DEFINIZIONE STRATEGIE</STRONG></a></span>
+                        </br>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_1_0_policentrismoereticolaritaunnuovomodellodianalisi.html', 'Policentrismo e reticolarità: un nuovo modello di analisi', 'width=950, height=750, resizable, status, scrollbars=1, location');"> POLICENTRISMO E RETICOLARITÀ</a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_1_1_mondializzazione.html', 'Mondializzazione', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Mondializzazione</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_1_2_urbanita.html', 'Urbanità', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Urbanità</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_1_3_inlineaconloschemadisviluppodellospazioeuropeo.html', ' In linea con lo Schema di Sviluppo dello Spazio Europeo', 'width=950, height=750, resizable, status, scrollbars=1, location');">  <i>Schema Sviluppo Spazio Europeo</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp; <a href="javascript:;" onClick="window.open('projects/2_2_0_evoluzionedellabitareurbano.html', 'Evoluzione dell abitare urbano', 'width=950, height=750, resizable, status, scrollbars=1, location');"> EVOLUZIONE ABITARE URBANO</a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_2_1_valoresinergicosportnatura.html', 'Valore sinergico sport/natura', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Valore sinergico sport/natura</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/2_2_2_verdeagricolourbano.html', ' Verde agricolo urbano', 'width=1050, height=750, resizable, status, scrollbars=1, location');"> <i> Verde agricolo urbano</i></a></span>
+                    </div>
+                    <div>
+                        </br>
+                        <span class="legenda"><a > <STRONG>2. ANALISI TESSUTI STORICI</STRONG></a></span>
+                    </div>
+                    <div>
+                        </br>
+                    </div>
+                    <div>
+                        <script>
+                            function enterTour() {
+                             if(document.getElementById("corpisanti").checked == true ){
+                            	var tour = null;
+                            	var la = ge.createLookAt('');
+                            	la.set(45.67635957133638, 9.665281553452115,
+                            	23, // altitudeget
+                            	ge.ALTITUDE_RELATIVE_TO_GROUND,
+                            	-20, // heading
+                            	65, // straight-down tilt
+                            	4500 // range (inverse of zoom)
+                            	);
+                            
+                            	ge.getView().setAbstractView(la);
+                            
+                            
+                            	
+                            	var href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/';
+                            	href += 'static/bergamo_corpi_santi.kml';
+                               
+                            	google.earth.fetchKml(ge, href, function(kmlObject) {
+                            	  if (!kmlObject) {
+                            		// wrap alerts in API callbacks and event handlers
+                            		// in a setTimeout to prevent deadlock in some browsers
+                            		setTimeout(function() {
+                            		  alert('Bad or null KML.');
+                            		}, 0);
+                            		return;
+                            	  }
+                            	
+                            	  // Show the entire KML file in the plugin.
+                            	  ge.getFeatures().appendChild(kmlObject);
+                            	
+                            	  // Walk the DOM looking for a KmlTour
+                            	  walkKmlDom(kmlObject, function() {
+                            		if (this.getType() == 'KmlTour') {
+                            		  tour = this;
+                            		  return false; // stop the DOM walk here.
+                            		}
+                            	  });
+                            	});
+                            	
+                            
+                            } 
+                            
+                            // html da inserire <input type="checkbox" id="corpisanti"   onclick="enterTour();"> 
+                            			
+                             }
+                             
+                            	
+                            
+                             
+                            
+                            				
+                        </script>
+                        <input type="checkbox" id="kml-bergamo_corpi_santi-check" onclick="toggleGeojson_cs('bergamo_corpi_santi')">	
+                        <span class="legenda"> CORPI SANTI</span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_1_0_icorpisanti.html', 'Evoluzione Corpi santi', 'width=950, height=750, resizable, status, scrollbars=1, location');"><i> Evoluzione Corpi Santi</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_1_1_rapportodeicorpisanticonlacitta.html', 'Rapporto dei Corpi Santi con la città', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Rapporto con la città</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_1_2_ilcorposantodicolognolaelaferrovianell800.html', 'Il Corpo Santo di Colognola e la ferrovia nell 800 ', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Colognola e la ferrovia nell'800 </i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp; ESPANSIONE URBANA</a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_2_1_gresecolognolanel1930.html', 'Gres e Colognola nel 1930', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Gres e Colognola nel 1930</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_2_2_espansioneurbanadibergamo19501994.html', 'Espansione urbana di Bergamo: 1950 - 1994', 'width=1050, height=750, resizable, status, scrollbars=1, location');"> <i>Espansione urbana: 1950 - 1994 </i></a></span>
+                        </br>
+                        <input type="checkbox" id="kml-3_3_0_ilsistemaidrograficodellerogge_ok-check" onclick="toggleGeojson_idro('3_3_0_ilsistemaidrograficodellerogge_ok')">
+                        <span class="legenda">SISTEMA IDROGRAFICO</span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_3_0_ilsistemaidrograficodellerogge.html', ' Il sistema idrografico delle rogge', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Sistema delle rogge</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_3_1_ilpaleoalveodeltorrentemorla.html', 'Il paleoalveo del torrente Morla', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i> Paleoalveo del torrente Morla</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;  USO DEL SUOLO STORICO </a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_4_1_ilcatastoaustriacodel1853.html', 'Il catasto austriaco del 1853', 'width=1050, height=750, resizable, status, scrollbars=1, location');"> <i> Catasto austriaco 1853</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_4_2_lacartografiaigm18891971.html', 'La cartografia I.G.M. 1889-1971', 'width=1050, height=750, resizable, status, scrollbars=1, location');"> <i> Cartografia I.G.M. 1889-1971 </i></a></span>
+                        </br></br>
+                        <span class="legenda"> <STRONG>3. CRITICITÀ PERIFERIA SUD-OCCIDENTALE</STRONG></a></span>
+                        </br>		</br>
+                        <span class="legenda">&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_1_0_edificidismessieobsoletiattornoexgres.html', '   Le periferie di Bergamo oggi', 'width=950, height=750, resizable, status, scrollbars=1, location');"> EDIFICI DISMESSI-OBSOLETI VICINO EX GRES</a></span>
+                        </br>
+                        <input type="checkbox" id="kml-bergamo_4_1_1_ediliziaresidenzialepubblicaERP_ok-check" onclick="toggleGeojson_erp('bergamo_4_1_1_ediliziaresidenzialepubblicaERP_ok')">
+                        <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_1_1_ediliziaresidenzialepubblicaERPobsoletaeareedismesse.html', ' Edilizia residenziale pubblica (ERP) obsoleta e aree dismesse', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  ERP obsoleta e aree dismesse</i></a></span>
+                        <br>
+                        <span class="legenda">&nbsp; &nbsp; &nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_1_2_ilmetodorifo.html', ' Il metodo RIFO', 'width=950, height=750, resizable, status, scrollbars=1, location');"><i> Ricentramento del metodo RIFO </i></a></span>
+                        <br>
+                        <span class="legenda">&nbsp; &nbsp;  ANALISI VERDE URBANO E MOBILITÀ </a></span>
+                        </br>
+                        <input type="checkbox" id="kml-bergamo_4_2_1_Contestoattualeparchiareeverdiorti-check" onclick="toggleGeojson_parchi('bergamo_4_2_1_Contestoattualeparchiareeverdiorti')">
+                        <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_2_1_contestoattualeparchiareeverdieortiurbani.html', ' Contesto attuale: parchi, aree verdi e orti urbani', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Parchi, aree verdi e orti urbani</i></a></span>
+                        </br>
+                        <input type="checkbox" id="kml-bergamo_mobilita_pubblica_e_green_ok-check" onclick="toggleGeojson_mob('bergamo_mobilita_pubblica_e_green_ok')">
+                        <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_2_2_mobilitapubblicaegreen.html', ' Mobilità pubblica e greeni', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Mobilità pubblica e green</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_2_4_criticitadelleinfrastrutturedellamobilita.html', '  Criticità delle infrastrutture della mobilità', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Criticità della mobilità</i></a></span>
+                        </br>
+                        <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_2_3_progettualitagreenilparcolineare.html', '  Progettualità green: il parco lineare', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Progettualità green: "parco lineare"</i></a></span>
+                    </div>
+                    </br>
+                    <STRONG>PROGETTUALITA' EX-GRES</STRONG>
+                    <br>
+                    </br>	
+                    <span class="legenda"><a href="javascript:;" onClick="window.open('projects/5_2_2_nuovepolarita.html', 'Nuove polarità', 'width=950, height=750, resizable, status, scrollbars=1, location');"><STRONG>1. LA POLARITÀ DEL PALAGHIACCIO</STRONG></a></span>
+                    </br>	
+                    </br>
+                    <span class="legenda"><STRONG>2. LA RETICOLARITA' SLOW</STRONG></a></span>
+                    </br>
+                    <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/5_2_3_scenarioprogettuale.html', 'Sloway', 'width=950, height=750, resizable, status, scrollbars=1, location');"> SCENARIO PROGETTUALE</a></span>
+                    </br>
+                    <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/5_4_1_analisidelsito.html', 'Analisi del sito ', 'width=950, height=750, resizable, status, scrollbars=1, location');"> ANALISI CLIMATICHE</a></span>	
+                    </br>	
+                    <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/5_3_0_strategieintervento.html', '   STRATEGIE DI INTERVENTO', 'width=950, height=750, resizable, status, scrollbars=1, location');"> STRATEGIE DI INTERVENTO</a></span>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <div class="input_check">
+                        <input type="checkbox" id="kml-analisi-check" onclick="toggleGeojson('analisi')" checked>
+                    </div>
+                    </br>
+                    <div class="input_check">
+                        <input type="checkbox" id="kml-intervento-check" onclick="toggleGeojson('intervento')" checked>
+                    </div>
+                    </br>	
+                    </br>					
+                    </br>
+                    <br>
+                    <div class="uk-width-1-4">
+                        <span class="legenda-title Stile3"> </span>
+                        <div class="earthtoggles">
+                            <div class="Stile3">
+                                <input type="checkbox" id="kml-bergamoconfine-check" onclick="toggleGeojson('bergamoconfine')" >
+                                <span class="legenda">Confini Comunali</span>
+                            </div>
+                            <div class="input_check">
+                                <input type="checkbox" id="kml-designatori-check" onclick="toggleGeojson('designatori')" checked>
+                            </div>
+                            <div class="Stile3">
+                                <input type="checkbox" id="kml-strade-check" onClick="toggleStrade()">
+                                <span class="legenda">Strade Google Earth</span>
+                            </div>
+                        </div>
+                        <div class="Stile3">
+                            <input type="checkbox" id="kml-confini-check" onClick="toggleConfini()">
+                            <span class="legenda">Toponimi Google Earth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            
+            <div class="Stile3">
+                Latitudine, Longitudine
+                <div id="coordinate"></div>
+            </div>
+        </div>
+        <A HREF=http://www.unibg.it/diathesis target="_blank"> <img src="images/diathesis.gif" width="126" height="48" > </a>
+        <br>
+        <a href="mailto:sara.belotti@unibg.it">Help</a> 
+        </br>
+
+
+        <!-- <div class="Stile3">
+            <br>
+            RIFO3D è ottimizzato per il 
+            browser Firefox! 
+            Risoluzione schermo 
+            consigliata 1024x760
+        </div> -->
+		</div>
+		</div>
+		<div class="col-md-9 right">
+
+			<script src="js/initmapbox.js" type="text/javascript"></script>
+			       
+			<script type="text/javascript">
+			  window.onload = init;  
+			    </script>
+			<script type="text/javascript">
+			  jQuery(document).ready(function($){
+			       $target = $("#map3d").parents("article, main");
+			       $target.css("padding","0px");
+			});
+			</script>
+
+			<div id="map3d" style="width: 100%; height: 100%;"></div>
+
+		</div>
+    </body>
+</html>

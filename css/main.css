@@ -1,0 +1,237 @@
+/* CSS Document */
+
+/*body,html,p,div{
+padding:0px;
+margin:0px;
+}*/
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    background-color: #fff;
+}
+
+
+
+.input_check {
+ display:none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header {
+  height: 10vh;
+}
+.container{
+}
+
+/*.contenitore{
+width:400px;
+height:400px;
+position:relative;
+background-color:#B4DCCF;
+border:1px solid black;
+}
+
+.contenitore .paragrafo{
+margin-left:100px;
+margin-top:100px;
+}
+
+*/
+
+.left{
+/*background-color:#BE56A5; */
+/*width:15%;*/
+/*height:100%;*/
+/*border:1px solid black;*/
+/*text-align:left;*/
+/*position:absolute;*/
+/*top:20px;
+padding:1%;
+*/
+overflow-y: auto;
+max-height: 82vh;
+}
+
+.right{
+/* background-color:#BE56A5;*/
+/*width:83%;*/
+/*border:1px solid black;*/
+/*text-align:center;*/
+/*position:absolute;*/
+/*top:100px;*/
+/*margin-right: 2%;*/
+/*right:2%;*/
+
+height: 82vh;
+}
+
+
+
+
+
+.bottom_left{
+background-color:#BE56A5;
+width:200px;
+height:200px;
+border:1px solid black;
+text-align:center;
+position:absolute;
+bottom:0px;
+left:0px;
+}
+
+.bottom_left_bordo{
+background-color:#BE56A5;
+width:200px;
+height:200px;
+border:1px solid black;
+text-align:center;
+position:absolute;
+bottom:50px;
+left:10px;
+}
+
+.da_spostare p, .spostato p , .bottom_left p, .bottom_left_bordo p{
+
+font-weight:bold;
+}
+
+.spiegazioni{
+padding-top:50px;
+
+}
+
+.spiegazioni .evidenziato{
+font-weight:bold;
+font-size:+1;
+margin-bottom:20px;
+}
+
+
+
+.header{
+height:95px;
+width:100%;
+/*background-color:#CCFF00; */
+/*border:1px solid black;*/
+text-align:center;
+position:absolute;
+top:5px;
+right:0px;
+font-weight:bold;
+font-size:+15;
+
+}
+
+
+.sotto_sx{
+height:95px;
+width:95px;
+/*background-color:#CCFF00; */
+/*border:1px solid black;*/
+text-align:left;
+position:absolute;
+margin-top:1250px;
+
+
+
+}
+
+
+.cerca{
+height:95px;
+width:95px;
+/*background-color:#CCFF00; */
+/*border:1px solid black;*/
+text-align:left;
+position:absolute;
+margin-left:87%;
+
+
+
+}
+
+
+
+
+.sotto{
+height:150px;
+width:150px;
+background-color:#00FF99;
+}
+
+.sotto_left{
+height:150px;
+width:150px;
+background-color:#00FF99;
+position:relative;
+left:30px;
+}
+
+
+.sotto_left_top{
+height:150px;
+width:150px;
+background-color:#00FF99;
+position:relative;
+left:30px;
+top:50px;
+}
+
+
+.scorrevole{
+width:300px;
+height:2000px;
+background-color:#99FF33;
+margin-left:180px;
+}
+
+
+.fisso{
+height:150px;
+width:150px;
+position:fixed;
+top:0px;
+left:0px;
+background-color:#FF66FF;
+}
+
+
+.fisso_c{
+height:150px;
+width:150px;
+position:fixed;
+top:100px;
+left:500px;
+background-color:#3399CC;
+}
+
+/* ##### GOOGLE EARTH BALOON FIX ##### */
+#map3d img {
+    max-width: 330px;
+}
+#map3d #balooncontent {
+   max-width: 330px;
+}
+div.box{
+  max-width: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 0px;
+  text-align: justify;
+  font-size: 13px;
+  width:385px;
+}
+
+div.box h3 {
+    font-size: 13px;
+    font-family: arial;
+}
