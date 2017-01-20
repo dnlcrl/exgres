@@ -7,6 +7,8 @@ https://unibg-gislab.github.io/rifo3d/
 
 
 # TODO 
-- move and relink dataset files in a new repo
+- relink dataset files from "datasets" repo
 - optimize images for web visualization
 - convert and fix old kml to geojson
+- add flyTo
+- add map bounds
