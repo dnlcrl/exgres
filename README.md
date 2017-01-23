@@ -3,7 +3,7 @@
 
 mapping esplorativo dell’area ex-Gres di Bergamo
 
-https://unibg-gislab.github.io/rifo3d/
+https://unibg-gislab.github.io/exgres/
 
 
 # TODO 
