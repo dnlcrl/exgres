@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <link href="css/main.css" rel="stylesheet" type="text/css" />
-        <title>Rifo3D</title>
+        <title>Masterplan dell'area EX-GERS</title>
         <style type="text/css">
             <!--
                 .Stile3 {font-size: smaller}
@@ -14,6 +14,12 @@
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/jquery-noconflict.js" type="text/javascript"></script>
         <script src="js/jquery-migrate.min.js" type="text/javascript"></script> 
+        <script src="js/spin.min.js" type="text/javascript"></script> 
+        <!-- <script type="text/javascript" src="/javascripts/prototype.js"> </script>  -->
+        <!-- <script type="text/javascript" src="/javascripts/window.js"> </script> -->
+        <!-- <link href="/stylesheets/themes/default.css" rel="stylesheet" type="text/css"/>  -->
+
+        <!-- <link href="themes/mac_os_x.css" rel="stylesheet" type="text/css"/>  -->
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,54 +28,42 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
-        <style>
-            /*body { margin:0; padding:0; }*/
-            .mapboxgl-canvas { position:relative !important; top:0; bottom:0; width:100%; }
-            .mapboxgl-popup {
-            /*max-width: 400px;*/
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-            }
-        </style>
-        <!-- <script type="text/javascript" src="js/prototype.js"> </script>  -->
-        <!-- <script type="text/javascript" src="js/window.js"> </script> -->
-        <!-- <link href="css/main.css" rel="stylesheet" type="text/css"/> <!-- Add this to have a specific theme-->  
-        <!-- <link href="css/mac_os_x.css" rel="stylesheet" type="text/css"/>  -->
     </head>
     <body>
-        <div class="container">
-    		<div class="page-header clearfix">
-            <div class="col-md-1"></div>
-            <div class="col-md-3">
-                <center>
-                    <a href="http://www.unibg.it/diathesis" target="_blank"><img src="images/logo_cst_diathesis.jpg" width="130" height="70" border="0" ></a>
-                </center>
+        <header style="margin-top: 5px;">
+            <!-- <div class="container"> -->
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-3">
+                    <center>
+                        <a href="http://www.unibg.it/diathesis" target="_blank"><img src="images/logo_cst_diathesis.jpg" width="130" height="70" border="0" ></a>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <a href="http://www.rifoit.org/ex_gres/cybermap_areaexgres/cybermap_areaexgres.html" target="_blank"><img src="images/titolo.png"  border="0" style="width:47vh"> </a>
+                    </center>
+                </div>
+                <div class="col-md-1" style="margin-top:1%;">
+                    <center>
+                        <a href="http://www.rifoit.org" target="_blank"><img src="images/homerifo_home.png" border="0" style="margin-top:1%;width: 10vh;" ></a>
+                    </center>
+                </div>
+                <div class="col-md-1">
+                    <center>
+                        <a href="http://www.rifoit.org/rifo3d/index_pro.html" target="_blank"><img src="images/bannerrifo.png" border="0" style="margin-top:1%;width: 10vh;"></a>
+                    </center>
+                </div>
+                <div class="col-md-1">
+                    <center>
+                        <a href="http://www.mcarchitects.it/" target="_blank"><img src="images/mca_logo.jpg" border="0" style="width: 10vh;" ></a>
+                    </center>
+                </div>
+                <div class="col-md-1">
+                </div>
             </div>
-            <div class="col-md-4">
-                <center>
-                    <a href="http://www.rifoit.org/ex_gres/cybermap_areaexgres/cybermap_areaexgres.html" target="_blank"><img src="images/titolo.png"  border="0" > </a>
-                </center>
-            </div>
-            <div class="col-md-1" style="margin-top:1%;">
-                <center>
-                    <a href="http://www.rifoit.org" target="_blank"><img src="images/homerifo_home.png" border="0"  ></a>
-                </center>
-            </div>
-            <div class="col-md-1">
-                <center>
-                    <a href="http://www.rifoit.org/rifo3d/index_pro.html" target="_blank"><img src="images/bannerrifo.png" border="0" style="margin-top:1%;"></a>
-                </center>
-            </div>
-            <div class="col-md-1">
-                <center>
-                    <a href="http://www.mcarchitects.it/" target="_blank"><img src="images/mca_logo.jpg" border="0" style="" ></a>
-                </center>
-            </div>
-            <div class="col-md-1"></div>
-            </div>
-
-			</div>
-
-        </divv>
+        </header>
         
 
         <div class="col-md-3 left">
@@ -86,20 +80,25 @@
                     </div>
                     <STRONG>BERGAMO</STRONG>
                     <div>
-                        <input type="checkbox" id="kml-bergamo_obsoleto-check" onclick="toggleGeojson('bergamo_obsoleto')">
+                        <input type="checkbox" id="Geojson-bergamo_obsoleto-check" onclick="toggleGeojson('bergamo_obsoleto')">
                         <span class="legenda"><a href="javascript:;" onClick="window.open('images/image_obsoleto/bergamo_obsoleto.html', 'Bergamo Obsoleto', 'width=450, height=450, resizable, status, scrollbars=1, location');"> Obsoleto</a></span>
                     </div>
                     <div>
-                        <input type="checkbox" id="kml-bergamo_dismesso-check" onclick="toggleGeojson('bergamo_dismesso')">
+                        <input type="checkbox" id="Geojson-bergamo_dismesso-check" onclick="toggleGeojson('bergamo_dismesso')">
                         <span class="legenda"><a href="javascript:;" onClick="window.open('images/image_dismesso/bergamo_dismesso.html', 'Bergamo Dismesso', 'width=450, height=450, resizable, status, scrollbars=1, location');"> Dismesso</a></span>
-                    </div>
+                    </div><!-- 
+                    <div>
+                        <input type="checkbox" id="geojson-bergamo_buildings-check" onclick="toggleEdifici('bergamo')">
+                        <span class="legenda">Altri edifici</span>
+                    </div> -->
                     <STRONG>Area Ex Gres</STRONG>
                     <div>
-                        <input type="checkbox" id="kml-bergamo_area_exgres_eddismessi-check" onclick="toggleGeojson('bergamo_area_exgres_eddismessi')" >
+                        <input type="checkbox" id="Geojson-bergamo_area_exgres_eddismessi-check" onclick="toggleGeojson('bergamo_area_exgres_eddismessi')" >
                         <span class="legenda">Edifici Dismessi</span>
                     </div>
                     <div>
-                        <input type="checkbox" id="kml-brescia_dismesso-check" onclick="toggleGeojson('brescia_dismesso')">
+
+                        <input type="checkbox" id="Geojson-bergamo_area_exgres_edprogetto-check" onclick="toggleGeojson('bergamo_area_exgres_edprogetto')">
                         <span class="legenda">Edifici in progetto (Concept Generale)</span>
                     </div>
                     </br>
@@ -137,7 +136,7 @@
                         </br>
                     </div>
                     <div>
-                        <script>
+                        <!-- <script>
                             function enterTour() {
                              if(document.getElementById("corpisanti").checked == true ){
                             	var tour = null;
@@ -155,10 +154,10 @@
                             
                             	
                             	var href = window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/';
-                            	href += 'static/bergamo_corpi_santi.kml';
+                            	href += 'static/bergamo_corpi_santi.geojson';
                                
-                            	google.earth.fetchKml(ge, href, function(kmlObject) {
-                            	  if (!kmlObject) {
+                            	google.earth.fetchGeojson(ge, href, function(geojsonObject) {
+                            	  if (!geojsonObject) {
                             		// wrap alerts in API callbacks and event handlers
                             		// in a setTimeout to prevent deadlock in some browsers
                             		setTimeout(function() {
@@ -168,11 +167,11 @@
                             	  }
                             	
                             	  // Show the entire KML file in the plugin.
-                            	  ge.getFeatures().appendChild(kmlObject);
+                            	  ge.getFeatures().appendChild(geojsonObject);
                             	
-                            	  // Walk the DOM looking for a KmlTour
-                            	  walkKmlDom(kmlObject, function() {
-                            		if (this.getType() == 'KmlTour') {
+                            	  // Walk the DOM looking for a GeojsonTour
+                            	  walkGeojsonDom(geojsonObject, function() {
+                            		if (this.getType() == 'GeojsonTour') {
                             		  tour = this;
                             		  return false; // stop the DOM walk here.
                             		}
@@ -191,8 +190,8 @@
                              
                             
                             				
-                        </script>
-                        <input type="checkbox" id="kml-bergamo_corpi_santi-check" onclick="toggleGeojson_cs('bergamo_corpi_santi')">	
+                        </script> -->
+                        <input type="checkbox" id="Geojson-bergamo_corpi_santi-check" onclick="toggleGeojson('bergamo_corpi_santi')">	
                         <span class="legenda"> CORPI SANTI</span>
                         </br>
                         <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_1_0_icorpisanti.html', 'Evoluzione Corpi santi', 'width=950, height=750, resizable, status, scrollbars=1, location');"><i> Evoluzione Corpi Santi</i></a></span>
@@ -207,7 +206,7 @@
                         </br>
                         <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_2_2_espansioneurbanadibergamo19501994.html', 'Espansione urbana di Bergamo: 1950 - 1994', 'width=1050, height=750, resizable, status, scrollbars=1, location');"> <i>Espansione urbana: 1950 - 1994 </i></a></span>
                         </br>
-                        <input type="checkbox" id="kml-3_3_0_ilsistemaidrograficodellerogge_ok-check" onclick="toggleGeojson_idro('3_3_0_ilsistemaidrograficodellerogge_ok')">
+                        <input type="checkbox" id="Geojson-idro-check" onclick="toggleGeojson('idro')">
                         <span class="legenda">SISTEMA IDROGRAFICO</span>
                         </br>
                         <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/3_3_0_ilsistemaidrograficodellerogge.html', ' Il sistema idrografico delle rogge', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>Sistema delle rogge</i></a></span>
@@ -224,17 +223,17 @@
                         </br>		</br>
                         <span class="legenda">&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_1_0_edificidismessieobsoletiattornoexgres.html', '   Le periferie di Bergamo oggi', 'width=950, height=750, resizable, status, scrollbars=1, location');"> EDIFICI DISMESSI-OBSOLETI VICINO EX GRES</a></span>
                         </br>
-                        <input type="checkbox" id="kml-bergamo_4_1_1_ediliziaresidenzialepubblicaERP_ok-check" onclick="toggleGeojson_erp('bergamo_4_1_1_ediliziaresidenzialepubblicaERP_ok')">
+                        <input type="checkbox" id="Geojson-bergamo_ERP-check" onclick="toggleGeojson('bergamo_ERP')">
                         <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_1_1_ediliziaresidenzialepubblicaERPobsoletaeareedismesse.html', ' Edilizia residenziale pubblica (ERP) obsoleta e aree dismesse', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  ERP obsoleta e aree dismesse</i></a></span>
                         <br>
                         <span class="legenda">&nbsp; &nbsp; &nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_1_2_ilmetodorifo.html', ' Il metodo RIFO', 'width=950, height=750, resizable, status, scrollbars=1, location');"><i> Ricentramento del metodo RIFO </i></a></span>
                         <br>
                         <span class="legenda">&nbsp; &nbsp;  ANALISI VERDE URBANO E MOBILITÀ </a></span>
                         </br>
-                        <input type="checkbox" id="kml-bergamo_4_2_1_Contestoattualeparchiareeverdiorti-check" onclick="toggleGeojson_parchi('bergamo_4_2_1_Contestoattualeparchiareeverdiorti')">
+                        <input type="checkbox" id="Geojson-verde-check" onclick="toggleGeojson('verde')">
                         <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_2_1_contestoattualeparchiareeverdieortiurbani.html', ' Contesto attuale: parchi, aree verdi e orti urbani', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Parchi, aree verdi e orti urbani</i></a></span>
                         </br>
-                        <input type="checkbox" id="kml-bergamo_mobilita_pubblica_e_green_ok-check" onclick="toggleGeojson_mob('bergamo_mobilita_pubblica_e_green_ok')">
+                        <input type="checkbox" id="Geojson-moby-check" onclick="toggleGeojson('moby')">
                         <span class="legenda"><a href="javascript:;" onClick="window.open('projects/4_2_2_mobilitapubblicaegreen.html', ' Mobilità pubblica e greeni', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Mobilità pubblica e green</i></a></span>
                         </br>
                         <span class="legenda">&nbsp; &nbsp;&nbsp; &nbsp;<a href="javascript:;" onClick="window.open('projects/4_2_4_criticitadelleinfrastrutturedellamobilita.html', '  Criticità delle infrastrutture della mobilità', 'width=950, height=750, resizable, status, scrollbars=1, location');"> <i>  Criticità della mobilità</i></a></span>
@@ -261,36 +260,57 @@
                     </br>
                     </br>
                     <div class="input_check">
-                        <input type="checkbox" id="kml-analisi-check" onclick="toggleGeojson('analisi')" checked>
+                        <input type="checkbox" id="Geojson-analisi-check" onclick="toggleGeojson('analisi')" checked>
                     </div>
                     </br>
                     <div class="input_check">
-                        <input type="checkbox" id="kml-intervento-check" onclick="toggleGeojson('intervento')" checked>
+                        <input type="checkbox" id="Geojson-intervento-check" onclick="toggleGeojson('intervento')" checked>
                     </div>
                     </br>	
                     </br>					
                     </br>
                     <br>
+
+
+
                     <div class="uk-width-1-4">
-                        <span class="legenda-title Stile3"> </span>
-                        <div class="earthtoggles">
-                            <div class="Stile3">
-                                <input type="checkbox" id="kml-bergamoconfine-check" onclick="toggleGeojson('bergamoconfine')" >
-                                <span class="legenda">Confini Comunali</span>
-                            </div>
-                            <div class="input_check">
-                                <input type="checkbox" id="kml-designatori-check" onclick="toggleGeojson('designatori')" checked>
-                            </div>
-                            <div class="Stile3">
-                                <input type="checkbox" id="kml-strade-check" onClick="toggleStrade()">
-                                <span class="legenda">Strade Google Earth</span>
-                            </div>
-                        </div>
-                        <div class="Stile3">
-                            <input type="checkbox" id="kml-confini-check" onClick="toggleConfini()">
-                            <span class="legenda">Toponimi Google Earth</span>
-                        </div>
+                    <span class="legenda-title Stile3"> </span>
+                    <div class="earthtoggles">
+                       <!--  <div class="Stile3">
+                            <input type="checkbox" id="confini_comunali-check" onclick="toggleConfini()" checked>
+                            <span class="legenda">Confini Comunali</span>
+                        </div> -->
+                        <!-- <div class="Stile3">
+                            <input type="checkbox" id="edifici3d-check" onclick="toggleEdifici()" checked>
+                            <span class="legenda">Edifici 3D</span>
+                        </div> -->
+                       <!--  <div id="menustyle" class="Stile3">
+                            <input type="radio" name="rtoggle" id="satellite" value="satellite">
+                            <label for="satellite" >Satellite</label>
+                            <input type="radio" name="rtoggle" id="hybrid" value="hybrid" checked="checked">
+                            <label for="hybrid" >Ibrido</label>
+                            <input type="radio" name="rtoggle" id="outdoors" value="outdoors" >
+                            <label for="outdoors" >Outdoors</label>
+                            <input type="radio" name="rtoggle" id="light" value="light">
+                            <label for="light" >Light</label>
+                            <input type="radio" name="rtoggle" id="dark" value="dark">
+                            <label for="dark" >Dark</label>
+                        </div> -->
+ <!--                        <div class="input_check">
+                            <input type="checkbox" id="Geojson-designatori__-check" onclick="toggleGeojson('designatori__')" >
+                        </div> -->
+                        
+
+
+                            <!-- <input type="checkbox" id="Geojson-strade-check" onClick="toggleStrade()">
+                            <span class="legenda">Strade</span> -->
+                        <!-- </div> -->
                     </div>
+<!--                         <div class="Stile3">
+                        <input type="checkbox" id="Geojson-confini-check" onClick="toggleConfini()">
+                        <span class="legenda">Toponimi</span>
+                    </div> -->
+                </div>
                 </div>
             </div>
             <br />
