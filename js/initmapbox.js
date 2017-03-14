@@ -65,10 +65,9 @@ function init() {
 	    container: 'map3d', // container id
 	    style: styles [app.currentStyle], //stylesheet location
 	    center:  app.center, //[9.856441382762, 45.10320555826568], // starting position
-	    zoom: 13, //9 // starting zoom
+	    zoom: 14, //9 // starting zoom
 	    pitch: 60,
     	maxBounds: bounds // Sets bounds as max
-
     });
     setTimeout(function() {
       document.getElementById("coordinate").innerHTML = "9.68963, 45.70565";
@@ -464,11 +463,11 @@ function loadmobyLayers(){
 
     layouts = [
     {
-    	"icon-image": "../icons/bus_fermata.svg",
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "icons/bus_fermata",
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
@@ -500,51 +499,51 @@ function loadmobyLayers(){
 
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#00AAFF",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
