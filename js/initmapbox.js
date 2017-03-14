@@ -68,7 +68,6 @@ function init() {
 	    zoom: 14, //9 // starting zoom
 	    pitch: 60,
     	maxBounds: bounds // Sets bounds as max
-
     });
     setTimeout(function() {
       document.getElementById("coordinate").innerHTML = "9.68963, 45.70565";
@@ -464,11 +463,11 @@ function loadmobyLayers(){
 
     layouts = [
     {
-    	"icon-image": "bus-15",
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "bus-15",
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
@@ -500,51 +499,51 @@ function loadmobyLayers(){
 
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
-    	"line-color": "#302013",
+    	"line-color": "#ef7b18",
     	"line-width": 2
     },
     {
