@@ -225,10 +225,12 @@ function showIdroLayer(){
 
 	for (var i = 4; i >= 1; i--)
 		app.map.setLayoutProperty('idro' + i.toString(), 'visibility', 'visible');
+	document.getElementById('legendidro').style.visibility = 'visible';
 }
 function hide_idro(){
 	for (var i = 4; i >= 1; i--)
 		app.map.setLayoutProperty('idro' + i.toString(), 'visibility', 'none');
+	document.getElementById('legendidro').style.visibility = 'hidden';
 }
 
 function showMobyLayer(){
@@ -257,6 +259,7 @@ function showMobyLayer(){
         name = 'moby' + files[i];
 		app.map.setLayoutProperty(name, 'visibility', 'visible');
 	}
+	document.getElementById('legendmoby').style.visibility = 'visible';
 }
 function hideMobyLayer(){
     files = ['1-atb-fermate-bus', 
@@ -283,16 +286,19 @@ function hideMobyLayer(){
         name = 'moby' + files[i];
 		app.map.setLayoutProperty(name, 'visibility', 'none');
 	}
+	document.getElementById('legendmoby').style.visibility = 'hidden';
 }
 
 function showVerdeLayer(){
 
 	for (var i = 5; i >= 1; i--)
 		app.map.setLayoutProperty('verde' + i.toString(), 'visibility', 'visible');
+	document.getElementById('legendgreen').style.visibility = 'visible';
 }
 function hide_verde(){
 	for (var i = 5; i >= 1; i--)
 		app.map.setLayoutProperty('verde' + i.toString(), 'visibility', 'none');
+	document.getElementById('legendgreen').style.visibility = 'hidden';
 }
 
 function toggleEdifici(file) {
@@ -413,6 +419,8 @@ function loadverdeLayers(){
 		app.currentGeojsonObjects[file + i.toString()] = true;
 	}
 
+	document.getElementById('legendgreen').style.visibility = 'visible';
+
 	
 }
 
@@ -463,25 +471,21 @@ function loadmobyLayers(){
 
     layouts = [
     {
-    	"icon-image": "bus_fermata_15",
-    	"icon-size": 1.25,
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "treno_stazione_15",
-    	"icon-size": 1.25,
+    	"icon-image": "bus-11",
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "BiGi_15",
-    	"icon-size": 1.25,
+    	"icon-image": "bicycle-share-15"
     },
     {
     	
     },
     {
-    	"icon-image": "carsharing_15",
-    	"icon-size": 1.25,
+    	"icon-image": "car-15",
     	//"icon-allow-overlap": true
     },
     {
@@ -596,6 +600,8 @@ function loadmobyLayers(){
 		});
 		app.currentGeojsonObjects[name] = true;
 	}
+	document.getElementById('legendmoby').style.visibility = 'visible';
+
 }
 
 function loadERPLayer(){
@@ -637,6 +643,7 @@ function loadERPLayer(){
 	});
 
 	app.currentGeojsonObjects[file] = true;
+	document.getElementById('legenderp').style.visibility = 'visible';
 }
 
 
@@ -662,8 +669,7 @@ function loadChieseLayer(){
             // "text-size": 11,
             // "text-transform": "uppercase",
             // "text-offset": [0, 0.6],
-            // "text-anchor": "top",borgo_11.svg
-			//borgo_15.svg
+            // "text-anchor": "top",
             "icon-image": "religious-christian-15",
 
             // "text-letter-spacing": 0.05,
@@ -869,6 +875,10 @@ function toggleLayer(file){
 	    	hideMobyLayer()
 	    	return;
 	    }
+	    if (file.includes('bergamo_ERP')){
+			document.getElementById('legenderp').style.visibility = 'hidden';
+	    }
+
 
     	if (file.includes('exgres')&& file.includes('progetto')) {
 			hide_designators();
@@ -892,6 +902,9 @@ function toggleLayer(file){
 	    if (file.includes('moby')) {
 	    	showMobyLayer()
 	    	return;
+	    }
+	    if (file.includes('bergamo_ERP')){
+			document.getElementById('legenderp').style.visibility = 'visible';
 	    }
 
     	if (file.includes('exgres') && file.includes('progetto')) {

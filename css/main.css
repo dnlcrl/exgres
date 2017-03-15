@@ -237,3 +237,49 @@ div.box h3 {
     font-size: 13px;
     font-family: arial;
 }
+
+.legend1{
+  background-image: url('../images/legenda/legendareticoloidrico.png');
+  position:absolute;
+  z-index: 1;
+  top: 10px;
+  left: 25px;
+  width:262px;
+  height:78px;
+  visibility: hidden;
+}
+
+.legend2{
+  background-image: url('../images/legenda/legendaproprietaerp.png');
+  position:absolute;
+  z-index: 1;
+  top: 88px;
+  left: 25px;
+
+  width: 262px;
+  height: 141px;
+  visibility: hidden;
+}
+
+.legend3{
+  background-image: url('../images/legenda/legendaverdeurbano.png');
+  position:absolute;
+  z-index: 1;
+  top: 229px;
+  left: 25px;
+
+  width: 262px;
+  height: 194px;
+  visibility: hidden;
+}
+
+.legend4{
+  background-image: url('../images/legenda/legendamobilita.png');
+  position:absolute;
+  z-index: 1;
+  top: 423px;
+  left: 25px;
+  width: 262px;
+  height: 230px;
+  visibility: hidden;
+}
