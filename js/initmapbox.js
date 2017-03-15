@@ -463,21 +463,25 @@ function loadmobyLayers(){
 
     layouts = [
     {
-    	"icon-image": "bus-11",
+    	"icon-image": "bus_fermata_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "bus-11",
+    	"icon-image": "treno_stazione_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "./icons/BiGi.png"
+    	"icon-image": "BiGi_15",
+    	"icon-size": 1.25,
     },
     {
     	
     },
     {
-    	"icon-image": "./icons/carsharing.png",
+    	"icon-image": "carsharing_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
@@ -658,7 +662,8 @@ function loadChieseLayer(){
             // "text-size": 11,
             // "text-transform": "uppercase",
             // "text-offset": [0, 0.6],
-            // "text-anchor": "top",
+            // "text-anchor": "top",borgo_11.svg
+			//borgo_15.svg
             "icon-image": "religious-christian-15",
 
             // "text-letter-spacing": 0.05,
