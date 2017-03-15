@@ -471,21 +471,25 @@ function loadmobyLayers(){
 
     layouts = [
     {
-    	"icon-image": "bus-11",
+    	"icon-image": "bus_fermata_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "bus-11",
+    	"icon-image": "treno_stazione_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
-    	"icon-image": "bicycle-share-15"
+    	"icon-image": "BiGi_15",
+    	"icon-size": 1.25,
     },
     {
     	
     },
     {
-    	"icon-image": "car-15",
+    	"icon-image": "carsharing_15",
+    	"icon-size": 1.25,
     	//"icon-allow-overlap": true
     },
     {
