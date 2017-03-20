@@ -141,6 +141,9 @@ function init() {
 		hide_designators();
 		loadAnalisiLayer();
 		loadInterventoLayer();
+		toggleGeojson('bergamo_obsoleto');
+		toggleGeojson('bergamo_dismesso');
+		toggleGeojson('bergamo_area_exgres_edprogetto');
 		//loadChieseLayer();
 		//loadverdeLayers();
 		//loadmobyLayers();
@@ -655,7 +658,7 @@ function loadChieseLayer(){
 	map = app.map
 	file = 'bergamo_corpi_santi'
 	path = 'https://unibg-gislab.github.io/datasets/masterplan_exgres/' + file + '.geojson';
-
+	flyTo([9.65871, 45.68239])
 	map.addSource(file, {
 	    'type': 'geojson',
 	    'data': path
@@ -684,6 +687,7 @@ function loadChieseLayer(){
 	});
 
 	app.currentGeojsonObjects[file] = true;
+
 }
 
 function loadAnalisiLayer(){
